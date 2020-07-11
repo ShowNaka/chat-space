@@ -37,17 +37,18 @@
     background-color: $blue_light;
     height: calc(100vh - 100px);
     padding: 20px 20px 0;
-    color: $white;
     font-weight: bold;
     .group{
       margin-bottom: 40px;
-      &__name{
-        font-size: 15px;
-        padding-bottom: 5px;
-      }
-      &__comment{
-        font-size: 11px;
-      }
+      text-decoration: none;
+      color: $white;
+        &__name{
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+        &__comment{
+          font-size: 11px;
+        }
     }
   }
 }
