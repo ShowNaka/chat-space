@@ -2,39 +2,21 @@
   .header
     .header__group
       %h2.header__group__name
-        techcamp
+        = @group.name
       %ul.header__group__member
         Member: 
-        %li.member
-          なかしょ
-        %li.member
-          なかた
-        %li.member
-          しょーなか
-    = link_to '#' do
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group) do
       .edit-btn
         Edit
-
   .message-list
-    .message-list__up
-      %p.message-list__up__user
-        なかしょ
-      %p.message-list__up__date
-        2020/07/05(sun) 11:00:00
-    .message-list__comment
-      おはよう
-    .message-list__up
-      %p.message-list__up__user
-        なかしょ
-      %p.message-list__up__date
-        2020/07/05(sun) 12:00:00
-    .message-list__comment
-      こんにちは
-
+    = render @messages
   .form
     .message-box
-      %input.message-box__text{placeholder: 'type a message', type: 'text'}
-      %label.image
-        %i.fas.fa-images
-        %input.image__choice{type: 'file'}
-    %input.send-btn{type: 'submit', value: 'Send'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class:'message-box__text', placeholder: 'type a message'
+        = f.label :image, class:'image' do
+          %i.fas.fa-images
+          = f.file_field :image, class:'image__choice'
+          = f.submit 'Send', class:'send-btn'
