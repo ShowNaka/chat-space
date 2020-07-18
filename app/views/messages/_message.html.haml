@@ -1,0 +1,10 @@
+.message-list__up
+  .message-list__up__user
+    = message.user.name
+  .message-list__up__date
+    = message.created_at.strftime('%Y年%M月%D日 %H時%M分')
+.message-list__comment
+  - if message.content.present?
+    %p.message-list__comment
+      = message.content 
+  = image_tag message.image.url, class: 'image__choice' if message.image.present?
