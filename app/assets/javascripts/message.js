@@ -40,7 +40,6 @@ $(function() {
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(formData)
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -51,7 +50,6 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      console.log(data.image)
       var html = buildHTML(data);
       $('.message-list').append(html);
       $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight}, 'fast');
