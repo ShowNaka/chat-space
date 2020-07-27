@@ -64,17 +64,16 @@
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
-    width: calc(100vw - 300px);
     display: flex;
     .message-box{
+      width: calc(100% - 120px);
       position: relative;
       &__text{
         height: 50px;
-        width: calc(100vw - 495px);
+        width: 100%;
         padding: 0 40px 0 10px;
         color: $black_light;
         border-style: none;
-        
       }
       .image{
         color: $black;
@@ -82,8 +81,9 @@
         font-size: 1.3rem;
         position: absolute;
         top: 10px;
-        left: 900px;
+        right: 10px;
         &__choice{
+          display: inline-block;
           display: none;
         }
       }
@@ -93,6 +93,9 @@
         background-color: #38aef0;
         color: $white_1;
         cursor: pointer;
+        margin-left: 15px;
+        padding: 0 30px;
+        position: absolute;
       }
     }
   }
