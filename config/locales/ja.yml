@@ -7,17 +7,6 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-        carrierwave_processing_error: 処理できませんでした
-        carrierwave_integrity_error: は許可されていないファイルタイプです
-        carrierwave_download_error: はダウンロードできません
-        extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
-        extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
-        content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません"
-        content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
-        rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
-        mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
-        min_size_error: "ファイルを%{min_size}バイト以上のサイズにしてください"
-        max_size_error: "ファイルを%{max_size}バイト以下のサイズにしてください"
   date:
     abbr_day_names:
     - 日
@@ -50,9 +39,9 @@ ja:
     - 金曜日
     - 土曜日
     formats:
-      default: "%Y年%M月%D日"
-      long: "%Y年%M月%D日"
-      short: "%Y年%M月%D日"
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
     month_names:
     - 
     - 1月
@@ -212,7 +201,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%M月%D日 %H時%m分"
-      long: "%Y年%M月%D日 %H時%m分"
-      short: "%Y年%M月%D日 %H時%m分"
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
     pm: 午後
